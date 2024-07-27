@@ -66,9 +66,17 @@
   background: #252a41;
   height: 2px;
 }
-
+.cl-logoBox{
+  background:#fff;
+  border-radius:5px;
+  border:1px solid white;
+}
 .cl-socialButtonsIconButton {
-  border: 3px solid #565761;
+  border: 3px solid #fff;
+}
+.cl-socialButtons {
+  border-radius:5px;
+  border: 1px solid #fff;
 }
 
 .cl-internal-wkkub3 {

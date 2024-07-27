@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
-  title: "YOOM",
+  title: "SC-Meet",
   description: "Video calling App",
   icons: {
     icon: "/icons/logo.svg",
@@ -25,7 +25,7 @@ export default function RootLayout({
         appearance={{
           layout: {
             socialButtonsVariant: "iconButton",
-            logoImageUrl: "/icons/yoom-logo.svg",
+            logoImageUrl: "/icons/SC-Meet.svg",
           },
           variables: {
             colorText: "#fff",
