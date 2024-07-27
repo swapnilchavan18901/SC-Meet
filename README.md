@@ -7,11 +7,11 @@
 - [Deployment](#deployment-link)
 
 ## Features
--Create new meetings
--Schedule meetings
--Join meetings
--View video recordings
--Personal room
+- Create new meetings
+- Schedule meetings
+- Join meetings
+- View video recordings
+- Personal room
 
 ## Technology Stack
 - Authentication: Clerk, providing secure and easy-to-use authentication.
