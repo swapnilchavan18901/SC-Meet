@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Table of Contents
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Description](#description)
+- [Getting Started](#getting-started)
+- [Deployment](#deployment-link)
+
+## Features
+-Create new meetings
+-Schedule meetings
+-Join meetings
+-View video recordings
+-Personal room
+
+## Technology Stack
+- Authentication: Clerk, providing secure and easy-to-use authentication.
+- Streaming Data: Stream, ensuring high-quality video and data streaming.
+- Frontend: HTML, CSS, TypeScript, and Next.js for a robust and modern user interface.
+- Styling: Tailwind CSS for fast and efficient styling.
+- Design System: ShadCN for consistent and reusable UI components.
+
+## Description
+   SC-Meet is a comprehensive online meeting application designed to facilitate seamless and efficient virtual meetings. It offers a range of features to enhance the user experience, making it easy to create, schedule, and join meetings. With SC-Meet, users can also access video recordings of past meetings and utilize a personal room for private discussions.
 
 ## Getting Started
+### Prerequisites
 
-First, run the development server:
+- HTMLL,CSS,TYPESCRIPT,NEXT-JS,TAILWIND,SHADCN
+- npm
+- Clerk Authentication [https://clerk.com/](https://clerk.com/)
+- STREAM([https://getstream.io/](https://getstream.io/))
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/swapnilchavan18901/SC-Meet.git
+   cd SC-Meet
+  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+   ```bash
+   npm install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env` file in the root directory and add the following:
+   ```bash
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=INPUT_DATA_AFTER_CLERK_REGISTER
+   CLERK_SECRET_KEY=INPUT_DATA_AFTER_CLERK_REGISTER
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+   NEXT_PUBLIC_STREAM_API_KEY=INPUT_DATA_AFTER_STREAM_REGISTER
+   STREAM_SECRET_KEY=INPUT_DATA_AFTER_STREAM_REGISTER
+   NEXT_PUBLIC_BASE_URL=localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Start the server:
+   ```bash
+   npm start
 
-## Learn More
+6. The server should be running on http://localhost:3000.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment Link
+This Website is hosted on vercel app
+Link -> [https://sc-meet.vercel.app/]
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
