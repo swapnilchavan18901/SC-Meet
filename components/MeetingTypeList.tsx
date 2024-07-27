@@ -7,9 +7,11 @@ import { useUser } from '@clerk/nextjs';
 import { Textarea } from './ui/textarea';
 import { useToast } from './ui/use-toast';
 import { Input } from './ui/input';
+
 import HomeCard from './HomeCard';
 import { Toaster } from "@/components/ui/toaster";
 import DatePicker  from "react-datepicker";
+import ReactDatePicker  from "react-datepicker";
 import MeetingModal from './MeetingModal';
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk';
 
@@ -67,10 +69,10 @@ const MeetingTypeList = () => {
         description="Start an instant meeting"
         handleClick={() => setMeetingState('isInstantMeeting')}
       />
-      <HomeCard
+       <HomeCard
         img="/icons/join-meeting.svg"
         title="Join Meeting"
-        description="via invitation link"
+        description="Via invitation link"
         className="bg-blue-1"
         handleClick={() => setMeetingState('isJoiningMeeting')}
       />
@@ -109,15 +111,16 @@ const MeetingTypeList = () => {
           <label className="text-base text-normal leading-[22px] text-sky-2">
              Select Date and Time
           </label>
-             <DatePicker  selected={values.dateTime} onChange={(date)=>setValues(
-              {...values,dateTime:date!})}
-              showTimeSelect 
-             TimeFormat="HH:MM"
-             timeInterval={15}
-             timeCaption="time"
-             dateFormat="MMMM d, yyyy h:mm aa"
-             className="w-full focus:outline-none rounded bg-dark-3 p-2"
-             />
+          <ReactDatePicker
+              selected={values.dateTime}
+              onChange={(date) => setValues({ ...values, dateTime: date! })}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={15}
+              timeCaption="time"
+              dateFormat="MMMM d, yyyy h:mm aa"
+              className="w-full rounded bg-dark-3 p-2 focus:outline-none"
+            />
               </div>
         </MeetingModal>
           ):(
@@ -137,6 +140,21 @@ const MeetingTypeList = () => {
         />
 
       )}  
+
+      <MeetingModal
+        isOpen={MeetingState === 'isJoiningMeeting'}
+        onClose={() => setMeetingState(undefined)}
+        title="Type the link here"
+        className="text-center"
+        buttonText="Join Meeting"
+        handleClick={() => router.push(values.link)}
+      >
+        <Input
+          placeholder="Meeting link"
+          onChange={(e) => setValues({ ...values, link: e.target.value })}
+          className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+        />
+      </MeetingModal>
       <MeetingModal
 
         isOpen={MeetingState==='isInstantMeeting'}
