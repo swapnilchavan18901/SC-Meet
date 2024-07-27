@@ -57,7 +57,8 @@ const MeetingTypeList = () => {
       }
 
     }
-
+    const meetingLink=`${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${CallDetails?.id}`
+    
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
       <HomeCard
@@ -124,11 +125,11 @@ const MeetingTypeList = () => {
         isOpen={MeetingState==='isScheduleMeeting'}
         onClose={()=>{setMeetingState(undefined)}}
         title="Meeting Created"
-        buttonText="Copy Meeting Link" 
+        buttonText="Copy Meeting Link"
         className="text-center"  
         handleClick={()=>{
-          // navigator.clipboard.writeText(meetinglink)
-          // toast({title:"Link Copied"})
+          navigator.clipboard.writeText(meetingLink)
+          toast({title:"Link Copied"})
         }}
         image="/icons/checked.svg"
         buttonIcon="/icons/copy.svg"
