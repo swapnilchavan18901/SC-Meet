@@ -9,6 +9,7 @@ import {
 import { ReactNode, useEffect, useState } from 'react';
 import { tokenProvider } from './../actions/stream.actions';
 import Loader from '@/components/Loader';
+
  const StreamVideoProvider = ({children}:{children:ReactNode}) => {
     const[videoClient,setvideoClient]=useState<StreamVideoClient>();
     const{user,isLoaded}=useUser();
